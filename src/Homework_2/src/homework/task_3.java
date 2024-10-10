@@ -9,7 +9,7 @@ public class task_3 {
         int count = 0;
         if (true) {
             for (int i = 0; i < array.length; i++) {
-                if ((array[i] == 0 && (array[i - 1] == 0 || array[i + 1] == 0))) {
+                if (array[i] == 0 && (array[i - 1] == 0 || array[i + 1] == 0)) {
                     count++;
                 } else if (array[i] == 0) {
                      count = 1;
