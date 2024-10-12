@@ -1,6 +1,5 @@
 package Homework_3.tasks_from_lection.task_1;
 
-import Homework_3.tasks_from_lection.task_1.model.Cat;
 import Homework_3.tasks_from_lection.task_1.service.CatService;
 
 public class Main {

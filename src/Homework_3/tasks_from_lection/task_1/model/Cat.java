@@ -1,7 +1,5 @@
 package Homework_3.tasks_from_lection.task_1.model;
 
-import java.util.List;
-
 public class Cat {
     /*
     1. Написать класс кота (из лекции) так, чтобы каждому объекту кота
