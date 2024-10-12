@@ -2,9 +2,6 @@ package Homework_3.tasks_from_lection.task_1.service;
 
 import Homework_3.tasks_from_lection.task_1.model.Cat;
 import Homework_3.tasks_from_lection.task_1.model.iterator.CatIterator;
-
-import java.awt.*;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -25,7 +22,7 @@ public class CatService implements Iterable{
 
     @Override
     public Iterator iterator() {
-        return new CatIterator((java.util.List) cats);
+        return new CatIterator(cats);
     }
 
     public String getCatList() {
