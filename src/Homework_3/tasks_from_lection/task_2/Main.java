@@ -17,7 +17,7 @@ public class Main {
         System.out.println(service.getAnimalsList());
         Animals cat = new Animals(Cat,"Kitty", "white", 3, 1);
 
-        System.out.println(cat.run(250));
+        System.out.println(cat.run(Cat,50));
         System.out.println(cat.jump(1));
         System.out.println(cat.swim(15));
     }

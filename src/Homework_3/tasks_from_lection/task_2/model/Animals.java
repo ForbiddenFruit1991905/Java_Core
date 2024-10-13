@@ -60,16 +60,18 @@ public class Animals {
     пробежать, расстояние, которое животное может проплыть. Следует учесть,
     что коты не любят воду.
     */
-//   public abstract boolean run(double run);
+//   public abstract boolean run(int distance);
 //
-//    public abstract boolean jump(double jump);
+//    public abstract boolean jump(int distance);
 //
-//    public abstract boolean swim(double swim);
+//    public abstract boolean swim(int distance);
 
-    public boolean run(int distance) {
+    public boolean run(AnimalClass type, int distance) {
+        if (type == AnimalClass.Cat) {
+            return distance >= 0 && distance <= 200;
+        }
         return false;
     }
-
 
     public boolean swim(int distance) {
         return false;
