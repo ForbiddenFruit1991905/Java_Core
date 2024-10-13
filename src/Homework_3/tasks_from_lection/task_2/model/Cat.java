@@ -4,22 +4,23 @@ public class Cat extends Animals {
     public Cat(AnimalClass type, String name, String color, int age, int ID) {
         super(type, name, color, age, ID);
     }
-//    @Override
+    @Override
     public boolean run(int distance) {
         // логика для кошек: реализация бега
-        if (distance <= 200) {
-            return true;
-        }
-        return false;
+        final int minRunDistance = 0;
+        final int maxRunDistance = 200;
+        return distance >= minRunDistance && distance <= maxRunDistance;
+//        return false;
     }
 
-//    @Override
+    @Override
     public boolean swim(int distance) {
         return false; // кошки не плавают
     }
 
-//    @Override
+    @Override
     public boolean jump(int height) {
-        return height <= 2; // ограничение для высоты прыжка
+        final int maxJumpHeight = 2;
+        return height <= maxJumpHeight;
     }
 }

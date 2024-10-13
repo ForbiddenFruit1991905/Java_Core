@@ -15,6 +15,7 @@ public class Animals {
     String color;
     int age;
     int ID;
+    private AnimalClass Cat;
 
     public Animals(AnimalClass type, String name, String color, int age, int ID) {
         this.type = type;
@@ -59,18 +60,23 @@ public class Animals {
     пробежать, расстояние, которое животное может проплыть. Следует учесть,
     что коты не любят воду.
     */
-   public boolean run(int distance) {
-       if (distance <= 0) {
-           return false;
-       }
-       return true;
-   }
+//   public abstract boolean run(double run);
+//
+//    public abstract boolean jump(double jump);
+//
+//    public abstract boolean swim(double swim);
 
-   public boolean swim(int distance) {
-       return false;
-   }
+    public boolean run(int distance) {
+        return false;
+    }
 
-   public boolean jump(int height) {
-       return false;
-   }
+
+    public boolean swim(int distance) {
+        return false;
+    }
+
+    public boolean jump(int height) {
+        return false;
+    }
+
 }
