@@ -5,26 +5,4 @@ public class Cat extends Animals {
         super(type, name, color, age, ID);
     }
 
-    public boolean run(int distance) {
-//        // логика для кошек: реализация бега
-//        final int minRunDistance = 0;
-//        final int maxRunDistance = 200;
-////        if (distance >= minRunDistance && distance <= maxRunDistance){
-////            return true;
-////        }
-//        return distance <= minRunDistance && distance >= maxRunDistance;
-////        return false;
-        return false;
-    }
-
-    @Override
-    public boolean swim(int distance) {
-        return false; // кошки не плавают
-    }
-
-    @Override
-    public boolean jump(int height) {
-        final int maxJumpHeight = 2;
-        return height <= maxJumpHeight;
-    }
 }

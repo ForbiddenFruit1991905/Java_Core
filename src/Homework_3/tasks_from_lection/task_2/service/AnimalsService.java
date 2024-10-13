@@ -2,7 +2,6 @@ package Homework_3.tasks_from_lection.task_2.service;
 
 import Homework_3.tasks_from_lection.task_2.model.AnimalClass;
 import Homework_3.tasks_from_lection.task_2.model.Animals;
-
 import java.util.ArrayList;
 
 public class AnimalsService {

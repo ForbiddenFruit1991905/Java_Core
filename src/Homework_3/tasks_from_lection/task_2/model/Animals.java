@@ -54,31 +54,44 @@ public class Animals {
                 ", age=" + age +
                 ", ID=" + ID;
     }
-   /*
-    Действия принимают размер препятствия и возвращают булев результат.
-    Три ограничения: высота прыжка, расстояние, которое животное может
-    пробежать, расстояние, которое животное может проплыть. Следует учесть,
-    что коты не любят воду.
-    */
-//   public abstract boolean run(int distance);
-//
-//    public abstract boolean jump(int distance);
-//
-//    public abstract boolean swim(int distance);
 
     public boolean run(AnimalClass type, int distance) {
-        if (type == AnimalClass.Cat) {
-            return distance >= 0 && distance <= 200;
+
+        switch (type) {
+            case Cat:
+                return distance >= 0 && distance <= 200;
+            case Dog:
+                return distance >= 0 && distance <= 500;
+            case Bird:
+                return distance >= 0 && distance <= 1000;
+            default:
+                return false;
         }
-        return false;
     }
 
-    public boolean swim(int distance) {
-        return false;
+    public boolean swim(AnimalClass type, int distance) {
+        switch (type) {
+            case Cat:
+                return false; // Кошки обычно не плавают
+            case Dog:
+                return distance >= 0 && distance <= 10;
+            case Bird:
+                return false; // не все птицы умеют плавать...
+            default:
+                return false;
+        }
     }
 
-    public boolean jump(int height) {
-        return false;
+    public boolean jump(AnimalClass type, int height) {
+        switch (type) {
+            case Cat:
+                return height >= 0 && height <= 2;
+            case Dog:
+                return height >= 0 && height <= 4;
+            case Bird:
+                return height >= 0 && height <= 10;
+            default:
+                return false; // По умолчанию возвращаем false, если тип животного не распознан
+        }
     }
-
 }
