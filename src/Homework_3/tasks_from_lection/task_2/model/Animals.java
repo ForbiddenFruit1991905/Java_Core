@@ -55,43 +55,49 @@ public class Animals {
                 ", ID=" + ID;
     }
 
-    public boolean run(AnimalClass type, int distance) {
+    private int calculateRange(int value, int age) {
+        double range = 0.25 * age; // 25% от возраста
+        return (int) (range * value);
+    }
+
+    public boolean run(AnimalClass type, int age, int distance) {
+        int range = calculateRange(distance, age);
 
         switch (type) {
             case Cat:
-                return distance >= 0 && distance <= 200;
+                return distance >= 0 && distance <= 200 + range;
             case Dog:
-                return distance >= 0 && distance <= 500;
+                return distance >= 0 && distance <= 500 + range;
             case Bird:
-                return distance >= 0 && distance <= 1000;
+                return distance >= 0 && distance <= 1000 + range;
             default:
                 return false;
         }
     }
 
-    public boolean swim(AnimalClass type, int distance) {
+    public boolean swim(AnimalClass type, int age, int distance) {
+        int range = calculateRange(distance, age);
+
         switch (type) {
-            case Cat:
-                return false; // Кошки обычно не плавают
             case Dog:
-                return distance >= 0 && distance <= 10;
-            case Bird:
-                return false; // не все птицы умеют плавать...
+                return distance >= 0 && distance <= 10 + range;
             default:
                 return false;
         }
     }
 
-    public boolean jump(AnimalClass type, int height) {
+    public boolean jump(AnimalClass type, int age, int height) {
+        int range = calculateRange(height, age);
+
         switch (type) {
             case Cat:
-                return height >= 0 && height <= 2;
+                return height >= 0 && height <= 2 + range;
             case Dog:
-                return height >= 0 && height <= 4;
+                return height >= 0 && height <= 4 + range;
             case Bird:
-                return height >= 0 && height <= 10;
+                return height >= 0 && height <= 10 + range;
             default:
-                return false; // По умолчанию возвращаем false, если тип животного не распознан
+                return false;
         }
     }
 }

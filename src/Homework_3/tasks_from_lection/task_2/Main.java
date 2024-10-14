@@ -21,20 +21,20 @@ public class Main {
         // Cat
         Animals cat = new Animals(Cat,"Kitty", "white", 3, 1);
 
-        System.out.printf(cat + "\n" + cat.getName() + " может: " + "\n" + "пробежать заданную дистанцию " + cat.run(Cat,250) + "\n"
-        + "подпрыгнуть на заданную высоту " + cat.jump(Cat,1) + "\n" + "проплыть " + cat.swim(Cat, 15) + "\n");
+        System.out.printf(cat + "\n" + cat.getName() + " может: " + "\n" + "пробежать заданную дистанцию " + cat.run(Cat,1,250) + "\n"
+        + "подпрыгнуть на заданную высоту " + cat.jump(Cat,1, 1) + "\n" + "проплыть " + cat.swim(Cat, 1,15) + "\n");
         System.out.println("__________________________________________________________");
         // Dog
         Animals dog = new Animals(Dog,"Lucky", "brown", 4, 2);
-        System.out.printf(dog.getName() + " может пробежать заданное расстояние " + dog.run(Dog,250) + "\n");
-        System.out.println(dog.jump(Dog,1));
-        System.out.println(dog.swim(Dog, 15));
+        System.out.printf(dog.getName() + " может пробежать заданное расстояние " + dog.run(Dog,3,250) + "\n");
+        System.out.println(dog.jump(Dog,3,1));
+        System.out.println(dog.swim(Dog, 3,15));
         System.out.println("__________________________________________________________");
         // Bird
         Animals bird = new Animals(Bird,"Fluffy", "blue", 4, 3);
 
-        System.out.println(bird.run(Bird,250));
-        System.out.println(bird.jump(Bird,1));
-        System.out.println(bird.swim(Bird, 15));
+        System.out.println(bird.run(Bird,2,250));
+        System.out.println(bird.jump(Bird,2,1));
+        System.out.println(bird.swim(Bird, 2,15));
     }
 }
