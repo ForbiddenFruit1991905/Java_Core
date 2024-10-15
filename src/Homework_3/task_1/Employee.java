@@ -1,6 +1,7 @@
 package Homework_3.task_1;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 
 public class Employee {
     /*
@@ -65,6 +66,38 @@ public class Employee {
         if (getAge() >= 45) {
             salary += 5000;
         }
+    }
+
+    /*
+    Написать методы (принимающие на вход массив сотрудников),
+вычисляющие средний возраст и среднюю зарплату сотрудников, вывести
+результаты работы в консоль.
+     */
+
+    public int avrAges(Employee[] employees) {
+        int sum = 0;
+        for (Employee employee : employees) {
+            sum += employee.getAge();
+        }
+        return sum/employees.length;
+    }
+
+    public int avrSalary(Employee[] employees) {
+        int sum = 0;
+        for (Employee employee : employees) {
+            sum += employee.getSalary();
+        }
+        return sum/employees.length;
+    }
+
+    /*
+    Написать прототип компаратора - метод внутри класса сотрудника, сравнивающий
+    две даты, представленные в виде трёх чисел гггг-мм-дд, без использования
+    условного оператора.
+     */
+
+    public int compare(Employee o1, Employee o2) {
+        return Integer.compare(o1.getAge(), o2.getAge());
     }
 
     @Override
