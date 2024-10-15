@@ -8,7 +8,7 @@ public class Employee {
     Задача: Создать класс "Сотрудник" с полями: ФИО, должность, телефон,
     зарплата, возраст.
      */
-    private final int currentYear = LocalDate.now().getYear();
+    private static final int currentYear = LocalDate.now().getYear();
     private static int empID = 0;
     String lastname;
     String firstname;
@@ -62,11 +62,11 @@ public class Employee {
         return currentYear - birth_year;
     }
 
-    public void higherSalary() {
-        if (getAge() >= 45) {
-            salary += 5000;
-        }
-    }
+//    public void higherSalary() {
+//        if (getAge() >= 45) {
+//            salary += 5000;
+//        }
+//    }
 
     /*
     Написать методы (принимающие на вход массив сотрудников),
