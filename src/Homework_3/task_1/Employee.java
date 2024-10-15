@@ -61,6 +61,12 @@ public class Employee {
         return currentYear - birth_year;
     }
 
+    public void higherSalary() {
+        if (getAge() >= 45) {
+            salary += 5000;
+        }
+    }
+
     @Override
     public String toString() {
         return

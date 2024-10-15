@@ -17,8 +17,17 @@ public class Main {
         coworkers[2] = employee3;
         coworkers[3] = employee4;
         coworkers[4] = employee5;
-        for (Object coworker : coworkers) {
-            System.out.println(coworker.toString());
+
+// Проверка созданного массива из 5 сотрудников
+//        for (Object coworker : coworkers) {
+//            System.out.println(coworker.toString());
+//        }
+        
+// Проверка метода повышения ЗП на 5000 при условии, что возраст сотрудника больше 45
+        for (Employee coworker : coworkers) {
+            coworker.higherSalary();
+            System.out.println(coworker);
         }
+
     }
 }
