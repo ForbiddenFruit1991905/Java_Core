@@ -15,8 +15,7 @@ public class Animals {
     String color;
     int age;
     int ID;
-    private AnimalClass Cat;
-
+    
     public Animals(AnimalClass type, String name, String color, int age, int ID) {
         this.type = type;
         this.name = name;
