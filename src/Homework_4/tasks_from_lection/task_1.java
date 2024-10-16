@@ -6,6 +6,12 @@ public class task_1 {
       ошибка преобразования столбца
      */
     public static void main(String[] args) {
+        Integer[][] matrix1 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        Integer[][] matrix2 = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}, {16, 17, 18, 19, 20}, {21, 22, 23, 24, 25}};
+
+        System.out.println(calcSumMatrix(matrix1));
+        System.out.println(calcSumMatrix(matrix2));
+
         try {
             throw new StringConversionRuntimeException(5, 7, "Ошибка преобразования строки");
         } catch (StringConversionRuntimeException e) {
@@ -39,6 +45,16 @@ public class task_1 {
     чисел в этом массиве, при этом, программа должна выбросить исключение, если строк или столбцов в
     исходном массиве окажется не 5.
      */
+      public static int calcSumMatrix(Integer[][] matrix) {
+          int result = 0;
 
+          for (int i = 0; i < matrix[0].length; i++) {
+              for (int j = 0; j < matrix[1].length; j++) {
+                   result += matrix[i][j];
+              }
+          }
+
+          return result;
+      }
 
 }
