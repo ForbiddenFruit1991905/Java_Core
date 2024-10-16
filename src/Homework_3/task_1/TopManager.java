@@ -1,7 +1,9 @@
 package Homework_3.task_1;
 
+import java.time.LocalDate;
+
 public class TopManager extends Employee{
-    public TopManager(String lastname, String firstname, String middlename, String position, String phonenumber, int salary, int birth_year) {
+    public TopManager(String lastname, String firstname, String middlename, String position, String phonenumber, int salary, LocalDate birth_year) {
         super(lastname, firstname, middlename, position, phonenumber, salary, birth_year);
     }
 

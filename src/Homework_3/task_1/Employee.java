@@ -1,14 +1,14 @@
 package Homework_3.task_1;
 
 import java.time.LocalDate;
-import java.util.Comparator;
+import java.time.Period;
 
 public class Employee {
     /*
     Задача: Создать класс "Сотрудник" с полями: ФИО, должность, телефон,
     зарплата, возраст.
      */
-    private static final int currentYear = LocalDate.now().getYear();
+    private static final LocalDate currentDate = LocalDate.now();
     private static int empID = 0;
     String lastname;
     String firstname;
@@ -16,10 +16,10 @@ public class Employee {
     String position;
     String phonenumber;
     int salary;
-    int birth_year;
+    LocalDate birth_year;
     public int id;
 
-    public Employee(String lastname, String firstname, String middlename, String position, String phonenumber, int salary, int birth_year) {
+    public Employee(String lastname, String firstname, String middlename, String position, String phonenumber, int salary, LocalDate birth_year) {
         this.id = ++empID;
         this.lastname = lastname;
         this.firstname = firstname;
@@ -54,13 +54,18 @@ public class Employee {
         return salary;
     }
 
-    public int getBirth_year() {
+    public LocalDate getBirth_year() {
         return birth_year;
     }
 
     public int getAge() {
-        return currentYear - birth_year;
+        return Period.between(birth_year, currentDate).getYears();
     }
+
+    /*
+    Создать метод, повышающий зарплату всем
+    сотрудникам старше 45 лет на 5000.
+     */
 
 //    public void higherSalary() {
 //        if (getAge() >= 45) {

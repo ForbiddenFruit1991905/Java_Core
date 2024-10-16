@@ -1,15 +1,15 @@
 package Homework_3.task_1;
 
-import java.util.Comparator;
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Employee employee1 = new Employee("L", "V", "M", "engineer", "777", 120000, 1991);
-        Employee employee2 = new Employee("L", "D", "S", "engineer", "999", 250000, 1990);
-        Employee employee3 = new Employee("B", "E", "U", "manager", "555", 190000, 1968);
-        Employee employee4 = new Employee("P", "V", "N", "worker", "333", 120000, 1968);
-        Employee employee5 = new Employee("M", "N", "B", "manager", "707", 270000, 1980);
-        Employee employee6 = new TopManager("M", "N", "B", "manager", "707", 290000, 1975);
+        Employee employee1 = new Employee("L", "V", "M", "engineer", "777", 120000,  LocalDate.of(1991,05,19));
+        Employee employee2 = new Employee("L", "D", "S", "engineer", "999", 250000,  LocalDate.of(1990,07,31));
+        Employee employee3 = new Employee("B", "E", "U", "manager", "555", 190000,  LocalDate.of(1968,04,25));
+        Employee employee4 = new Employee("P", "V", "N", "worker", "333", 120000, LocalDate.of(1968,05,25));
+        Employee employee5 = new Employee("M", "N", "B", "manager", "707", 270000, LocalDate.of(1980,05,25));
+        Employee employee6 = new TopManager("M", "N", "B", "manager", "707", 290000, LocalDate.of(1975, 2, 15));
 
         Employee[] coworkers = new Employee[6];
         coworkers[0] = employee1;
@@ -37,7 +37,7 @@ public class Main {
         }
 
 // Проверка метода повышения ЗП на 5000 при условии, что возраст сотрудника больше 45
-        TopManager topManager = new TopManager("M", "N", "B", "manager", "707", 290000, 1975);
+        TopManager topManager = new TopManager("M", "N", "B", "manager", "707", 290000, LocalDate.of(1975, 2, 15));
         topManager.higherSalary(coworkers);
 
         for (Employee employee : coworkers) {
