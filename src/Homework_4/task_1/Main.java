@@ -2,6 +2,8 @@ package Homework_4.task_1;
 
 import java.time.LocalDate;
 
+import static Homework_4.task_1.Holidays.values;
+
 public class Main {
     public static void main(String[] args) {
         Employee employee1 = new Employee(Gender.Female, "L", "V", "M", "engineer", "777", 120000,  LocalDate.of(1991,05,19));
@@ -38,7 +40,17 @@ public class Main {
             System.out.println(employee);
         }
 
+// Проверка метода getGreetings(Employee[] employees) в зависимости от праздника и пола (на примере 8 марта)
+        for (Employee coworker : coworkers) {
+            for (Holidays holiday : Holidays.values()) {
+                String greeting = coworker.getGreetings(holiday, LocalDate.of(2024, 3, 8));
+                if (LocalDate.of(2024, 3, 8).equals(Holidays.WomenDay.getDateForYear(LocalDate.now().getYear())) && coworker.getGender() == Gender.Female) {
+                    System.out.printf(coworker.getFirstname() + ", " + greeting);
+                    break;
+                }
+            }
         }
 
+        }
     }
 

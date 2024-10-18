@@ -22,6 +22,7 @@ public class Employee {
     LocalDate birth_year;
     public int id;
     Gender gender;
+    Holidays holidays;
 
     public Employee(Gender gender, String lastname, String firstname, String middlename, String position, String phonenumber, int salary, LocalDate birth_year) {
         this.id = ++empID;
@@ -33,6 +34,14 @@ public class Employee {
         this.phonenumber = phonenumber;
         this.salary = salary;
         this.birth_year = birth_year;
+    }
+
+    public Employee(Holidays holidays) {
+        this.holidays = holidays;
+    }
+
+    public Holidays getHolidays() {
+        return holidays;
     }
 
     public Gender getGender() {
@@ -91,6 +100,30 @@ public class Employee {
         return Integer.compare(o1.getAge(), o2.getAge());
     }
 
+//    public String getGreetings(Employee[] employees, Gender gender, LocalDate currentDate) {
+//        String greetingMessage = "";
+//        for (Employee employee : employees) {
+//            if (employee.getGender() == gender.Female && currentDate.equals(holidays.WomenDay)) {
+//                greetingMessage = "Поздравляем с Международным женским днем!";
+//                break;
+//            } else if (employee.getGender() == Gender.Male && currentDate.equals(holidays.DayDefender)) {
+//                greetingMessage = "Поздравляем с днем защитника Отечества!";
+//                break;
+//            } else if (currentDate.equals(holidays.NewYear)) {
+//                greetingMessage = "Поздравляем с Новым Годом!";
+//                break;
+//            }
+//        }
+//        return greetingMessage;
+//    }
+
+    public String getGreetings(Holidays holiday, LocalDate currentDate) {
+        if (currentDate.equals(holiday.getDateForYear(currentDate.getYear()))) {
+            System.out.println(holiday.getGreeting());
+        }
+        return "";
+    }
+
     @Override
     public String toString() {
         return  "gender='" + gender +  '\'' +
@@ -105,4 +138,7 @@ public class Employee {
     }
 
 }
+
+
+
 
