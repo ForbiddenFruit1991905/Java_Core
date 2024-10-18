@@ -41,11 +41,20 @@ public class Main {
         }
 
 // Проверка метода getGreetings(Employee[] employees) в зависимости от праздника и пола (на примере 8 марта)
+        LocalDate currentDate = LocalDate.of(2024, 3, 8);
+//        LocalDate currentDate = LocalDate.of(2024, 2, 23);
+//        LocalDate currentDate = LocalDate.of(2025, 1, 1);
         for (Employee coworker : coworkers) {
             for (Holidays holiday : Holidays.values()) {
-                String greeting = coworker.getGreetings(holiday, LocalDate.of(2024, 3, 8));
-                if (LocalDate.of(2024, 3, 8).equals(Holidays.WomenDay.getDateForYear(LocalDate.now().getYear())) && coworker.getGender() == Gender.Female) {
-                    System.out.printf(coworker.getFirstname() + ", " + greeting);
+                String greeting = coworker.getGreetings(holiday, currentDate);
+                if (currentDate.equals(Holidays.WomenDay.getDateForYear(LocalDate.now().getYear())) && coworker.getGender() == Gender.Female) {
+                    System.out.printf("%s, %s", coworker.getFirstname(), greeting);
+                    break;
+                } else if (currentDate.equals(Holidays.DayDefender.getDateForYear(LocalDate.now().getYear())) && coworker.getGender() == Gender.Male) {
+                    System.out.printf("%s, %s", coworker.getFirstname(), greeting);
+                    break;
+                } else if (currentDate.equals(Holidays.NewYear.getDateForYear(LocalDate.now().getYear()))) {
+                    System.out.printf("%s, %s", coworker.getFirstname(), greeting);
                     break;
                 }
             }
