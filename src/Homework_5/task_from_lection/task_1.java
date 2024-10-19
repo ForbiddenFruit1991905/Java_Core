@@ -7,6 +7,11 @@ import java.io.IOException;
 
 public class task_1 {
     public static void main(String[] args) {
+        /*
+        Создать пару-тройку текстовых файлов. Для упрощения (чтобы не разбираться с кодировками) внутри
+        файлов следует писать текст только латинскими буквами.
+         */
+        
         String textString = "This is an example text written using String.";
         StringBuilder textBuilder = new StringBuilder("This is an example text written using StringBuilder.");
         String sentence = makeSentence("This is a sample sentence.");
