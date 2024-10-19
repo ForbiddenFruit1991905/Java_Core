@@ -1,2 +1,0 @@
-This is the first example text written using StringBuilder. This is the end of the sentence.
-This is the second example text written using StringBuilder. This is the end of the sentence.

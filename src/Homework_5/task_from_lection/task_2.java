@@ -1,5 +1,10 @@
 package Homework_5.task_from_lection;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 import static Homework_5.task_from_lection.task_1.writeFile;
 
 public class task_2 {
@@ -13,6 +18,7 @@ public class task_2 {
         StringBuilder textBuilder2 = new StringBuilder(makeSentence("This is the second example text written using StringBuilder."));
         String concatenated = joinSentences(textBuilder1, String.valueOf(textBuilder2));
         writeFile("exampleJoinSentences.txt", concatenated);
+        readFile("exampleJoinSentences.txt");
     }
 
     private static String makeSentence(String text) {
@@ -26,5 +32,18 @@ public class task_2 {
         concatenated.append(text1).append("\n").append(text2);
 
         return concatenated.toString();
+    }
+
+    public static void readFile(String filename) {
+        File file = new File(filename);
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException ex) {
+            System.err.println("An error occurred while reading the file: " + ex.getMessage());
+        }
     }
 }
