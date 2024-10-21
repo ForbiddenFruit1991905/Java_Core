@@ -15,7 +15,7 @@ public class task_5 {
         пробел.
         */
 
-        String[] files = {"task_2.java", "tester.txt"}; // пример файла в контексте content root
+        String[] files = {"task2.java", "tester.txt"}; // пример файла в контексте content root
         String contentRoot = "src/Homework_5/task_from_lection/seminar_tasks";
 
         for (String file : files) {
@@ -26,7 +26,7 @@ public class task_5 {
                     Files.move(fileRoot, Paths.get(contentRoot, prefixedFileName), StandardCopyOption.REPLACE_EXISTING);
                     System.out.printf("Файл '%s' успешно перемещен с добавлением префикса.%n", file);
                 } catch (IOException e) {
-                    System.err.printf("Произошла ошибка при перемещении файла %s: %s%n", file, e.getMessage());
+                    throw new IOException(e);
                 }
             } else {
                 System.err.printf("Файл '%s' не существует в контексте content root.%n", file);
