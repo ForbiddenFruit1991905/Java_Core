@@ -1,4 +1,4 @@
-package regular;
+package Homework_1.regular;
 
 /**
  * Другой, очень полезный класс приложения. Здесь мы можем описать

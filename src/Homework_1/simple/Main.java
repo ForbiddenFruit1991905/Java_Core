@@ -1,7 +1,8 @@
-package simple;
+package Homework_1.simple;
 
-import regular.Decorator;
-import regular.OtherClass;
+
+import Homework_1.regular.Decorator;
+import Homework_1.regular.OtherClass;
 
 /**
  * Основной класс приложения. Здесь мы можем описать
